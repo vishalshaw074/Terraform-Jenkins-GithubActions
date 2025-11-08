@@ -19,7 +19,7 @@ pipeline {
         stage('Plan') {
             steps {
                 sh 'pwd;cd Terraform/ ; terraform init'
-                sh "pwd;cd Terraform/ ; terraform plan -out tfplan"
+                sh 'pwd;cd Terraform/ ; terraform plan -out=tfplan'
                 sh 'pwd;cd Terraform/ ; terraform show -no-color tfplan > tfplan.txt'
             }
         }
