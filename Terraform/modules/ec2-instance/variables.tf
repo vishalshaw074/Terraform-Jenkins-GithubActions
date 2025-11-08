@@ -12,3 +12,8 @@ variable "instance_name" {
   description = "Name tag for the EC2 instance."
   type        = string
 }
+
+variable "key_name" {
+  description = "Name of the SSH key pair to use for the instance."
+  type        = string
+}

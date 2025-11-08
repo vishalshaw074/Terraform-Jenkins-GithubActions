@@ -13,5 +13,11 @@ variable "instance_name" {
 variable "ami_id" {
   description = "AMI ID for the EC2 instance"
   type        = string
-  default     = "ami-026fccd88446aa0bf"  # Ubuntu AMI in us-east-1 
+  default     = "ami-0ecb62995f68bb549"  # Ubuntu AMI in us-east-1 
+}
+
+variable "key_name" {
+  description = "Name of the SSH key pair to use for the instance."
+  type        = string
+  default     = "aws-instance-1" # Set your key pair name here
 }
