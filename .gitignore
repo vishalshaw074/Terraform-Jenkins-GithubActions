@@ -34,3 +34,5 @@ override.tf.json
 # Ignore .terraformrc and .terraform.d if present
 .terraformrc
 .terraform.d/
+
+*.DS_Store
