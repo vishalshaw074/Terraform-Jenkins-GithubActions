@@ -5,21 +5,16 @@ pipeline {
     } 
     environment {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
-        AWS_ACCESS_KEY_SECRET= credentials('AWS_ACCESS_KEY_SECRET')
+        AWS_ACCESS_KEY_SECRET= credentials('AWS_SECRET_ACCESS_KEY')
     }
 
    agent  any
-    stages {
-        stage('checkout') {
+            stages {
+               stage('Checkout') {
             steps {
-                 script{
-                        dir("terraform")
-                        {
-                            git "https://github.com/vishalshaw074/Terraform-Jenkins/.git"
-                        }
-                    }
-                }
+                checkout scm
             }
+        }
 
         stage('Plan') {
             steps {
