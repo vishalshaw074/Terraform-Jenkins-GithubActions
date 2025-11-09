@@ -4,12 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-    inputs:
-      auto_approve:
-        description: "Automatically approve terraform apply?"
-        required: false
-        default: "false"
 
 jobs:
   terraform:
@@ -44,5 +38,5 @@ jobs:
         run: terraform plan -no-color
 
       - name: Terraform Apply
-        if: ${{ github.event.inputs.auto_approve == 'true' }}
+        id: apply
         run: terraform apply -auto-approve
